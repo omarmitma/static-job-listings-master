@@ -16,9 +16,9 @@ function traerDatos(){
         if(this.readyState==4 && this.status==200){
             let datos=JSON.parse(this.responseText);
             for(let item of datos){
-                for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')">${l}</button>`;
+                for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')" translate="no">${l}</button>`;
     
-                for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')">${tool}</button>`;
+                for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')" translate="no">${tool}</button>`;
                 create(item.company,item.logo,item.new,item.featured,item.position,item.postedAt,item.contract,item.location,item.role,item.level,languages,toolsInner);
                 languages='';
                 toolsInner='';
@@ -64,8 +64,8 @@ function create(company,logo,nuevo,featured,position,postedAt,contract,location,
                             </div>
                             <div class="features">
                                 <div class="buttons">
-                                    <button onclick="addSearch('${role}')">${role}</button>
-                                    <button onclick="addSearch('${level}')">${level}</button>
+                                    <button onclick="addSearch('${role}')" translate="no">${role}</button>
+                                    <button onclick="addSearch('${level}')" translate="no">${level}</button>
                                     ${languages}
                                     ${toolsInner}
                                 </div>
@@ -87,7 +87,7 @@ function addSearch(search){
         clear.innerHTML='<button onclick="clearSearch()">Clear</button>';
         sear.insertAdjacentHTML('beforeend',`<div class="itemSearch" id="item${search}">
                                                 <div class="text">
-                                                    <span class="searchSpan">${search}</span>
+                                                    <span class="searchSpan" translate="no">${search}</span>
                                                 </div>
                                                 <div class="btnCancel" onclick="deleteSearch('${search}')">
                                                     <img src="images/icon-remove.svg" alt="icon remove">
@@ -129,8 +129,8 @@ function searchJobs(s){
                     }
                 }
                 if(paint){
-                    for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')">${l}</button>`;
-                    for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')">${tool}</button>`;
+                    for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')" translate="no">${l}</button>`;
+                    for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')" translate="no">${tool}</button>`;
                     create(item.company,item.logo,item.new,item.featured,item.position,item.postedAt,item.contract,item.location,item.role,item.level,languages,toolsInner);
                     languages='';
                     toolsInner='';
