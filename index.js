@@ -16,9 +16,9 @@ function traerDatos(){
         if(this.readyState==4 && this.status==200){
             let datos=JSON.parse(this.responseText);
             for(let item of datos){
-                for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')"><p>${l}</p></button>`;
+                for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')">${l}</button>`;
     
-                for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')"><p>${tool}</p></button>`;
+                for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')">${tool}</button>`;
                 create(item.company,item.logo,item.new,item.featured,item.position,item.postedAt,item.contract,item.location,item.role,item.level,languages,toolsInner);
                 languages='';
                 toolsInner='';
@@ -64,8 +64,8 @@ function create(company,logo,nuevo,featured,position,postedAt,contract,location,
                             </div>
                             <div class="features">
                                 <div class="buttons">
-                                    <button onclick="addSearch('${role}')"><p>${role}</p></button>
-                                    <button onclick="addSearch('${level}')"><p>${level}</p></button>
+                                    <button onclick="addSearch('${role}')">${role}</button>
+                                    <button onclick="addSearch('${level}')">${level}</button>
                                     ${languages}
                                     ${toolsInner}
                                 </div>
@@ -129,8 +129,8 @@ function searchJobs(s){
                     }
                 }
                 if(paint){
-                    for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')"><p>${l}</p></button>`;
-                    for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')"><p>${tool}</p></button>`;
+                    for(let l of item.languages)languages +=`<button onclick="addSearch('${l}')">${l}</button>`;
+                    for(let tool of item.tools)toolsInner+=`<button onclick="addSearch('${tool}')">${tool}</button>`;
                     create(item.company,item.logo,item.new,item.featured,item.position,item.postedAt,item.contract,item.location,item.role,item.level,languages,toolsInner);
                     languages='';
                     toolsInner='';

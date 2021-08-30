@@ -218,10 +218,7 @@ body main .wrap .wrapJobs .job .features button {
   padding: 8px 12px;
   font-weight: bold;
   margin: 5px 5px;
-}
-
-body main .wrap .wrapJobs .job .features button p {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body main .wrap .wrapJobs .job .features button:hover {
